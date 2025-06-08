@@ -1,16 +1,24 @@
 # listview_mahasiswa
-
-A new Flutter project.
+Mobile Device Programming assignment
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Install all dependencies
+  ```bash
+  flutter pub get
+  ```
+- Change .env  
+  1. Duplicate `.env.example`.
+  2. Rename to `.env`.
+  3. Change value of 'API_BASE_URL' to your API address
+- Move database file
+  1. Move `koneksimhs.php` to htdocs folder from xampp.
+  2. Create database using `akademik.sql` file.
+  3. Start MySQL and Apache on xampp.
+  4. Check flutter app
+    ```bash
+    flutter doctor
+    ```
+  5. build flutter app
+    ```bash
+    flutter build web
+    ```
