@@ -85,7 +85,9 @@ class _UpdateMhsState extends State<UpdateMhs> {
           onPressed: () async {
             await updateData();
             widget.onUpdate();
-            Navigator.of(context).pop();
+            setState(() {
+              Navigator.of(context).pop();
+            });
           },
           child: Text("Perbarui"),
         ),

@@ -69,8 +69,10 @@ class _CreateMhsState extends State<CreateMhs> {
         TextButton(
           onPressed: () async {
             await createData();
-            widget.onUpdate();
-            Navigator.of(context).pop();
+            setState(() {
+              widget.onUpdate();
+              Navigator.of(context).pop();
+            });
           },
           child: Text("Konfirmasi"),
         ),

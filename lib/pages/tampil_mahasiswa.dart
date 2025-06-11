@@ -18,11 +18,11 @@ class TampilDataMhs extends StatefulWidget {
 
 class _TampilDataMhsState extends State<TampilDataMhs> {
   List mhsData = [];
-  final String APIaddress = Config.apiUrl;
+  final String apiAddress = Config.apiUrl;
 
   Future<void> bacaData() async {
-    String uri = 'http://$APIaddress/koneksimhs.php';
-    // print('APIaddress: $APIaddress');
+    String uri = 'http://$apiAddress/koneksimhs.php';
+
     bool getData = false;
 
     while (!getData) {

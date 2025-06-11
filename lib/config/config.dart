@@ -11,4 +11,14 @@ class Config {
 
     return dotenv.env['API_BASE_URL'] ?? 'localhost:3000';
   }
+
+  static Future<void> loadEnv() async {
+    try {
+      print('meng-inisialisasi');
+      await dotenv.load(fileName: ".env");
+      print('ter-inisialisasi');
+    } catch (e) {
+      print('gagal inisialisasi');
+    }
+  }
 }

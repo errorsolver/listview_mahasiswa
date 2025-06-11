@@ -61,7 +61,9 @@ class _DeleteMhsState extends State<DeleteMhs> {
           onPressed: () async {
             await deleteData(widget.nim);
             widget.onUpdate();
-            Navigator.of(context).pop();
+            setState(() {
+              Navigator.of(context).pop();
+            });
           },
           child: Text("Konfirmasi"),
         ),
