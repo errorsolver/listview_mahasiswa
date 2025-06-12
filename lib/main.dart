@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:listview_mahasiswa/config/config.dart';
 import 'package:listview_mahasiswa/pages/tampil_mahasiswa.dart';
 
@@ -13,6 +14,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.blue),
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
