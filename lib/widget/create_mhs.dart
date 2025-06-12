@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:listview_mahasiswa/config/config.dart';
 import 'package:listview_mahasiswa/helper/snackbar_error.dart';
 import 'package:listview_mahasiswa/helper/snackbar_success.dart';
+import 'package:listview_mahasiswa/widget/custom_input_text.dart';
+import 'package:listview_mahasiswa/widget/input_wrap.dart';
 
 class CreateMhs extends StatefulWidget {
   CreateMhs({super.key, required this.onUpdate});
@@ -25,45 +27,11 @@ class _CreateMhsState extends State<CreateMhs> {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text("Buat Mahasiswa"),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'NIM',
-              border: OutlineInputBorder(),
-              hintText: 'ex: 00001',
-            ),
-            controller: nimController,
-          ),
-          SizedBox(height: 20),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Name',
-              border: OutlineInputBorder(),
-              hintText: 'ex: Ronald',
-            ),
-            controller: nameController,
-          ),
-          SizedBox(height: 20),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Sex',
-              border: OutlineInputBorder(),
-              hintText: 'ex: 0: Laki-laki, 1: Perempuan',
-            ),
-            controller: sexController,
-          ),
-          SizedBox(height: 20),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Enroll',
-              border: OutlineInputBorder(),
-              hintText: 'ex: 2025',
-            ),
-            controller: enrollController,
-          ),
-        ],
+      content: InputWrap(
+        nimController: nimController,
+        nameController: nameController,
+        sexController: sexController,
+        enrollController: enrollController,
       ),
       actions: [
         TextButton(

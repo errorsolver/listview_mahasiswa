@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:listview_mahasiswa/config/config.dart';
 import 'package:listview_mahasiswa/helper/snackbar_error.dart';
 import 'package:listview_mahasiswa/helper/snackbar_success.dart';
+import 'package:listview_mahasiswa/widget/custom_input_text.dart';
+import 'package:listview_mahasiswa/widget/input_wrap.dart';
 
 class UpdateMhs extends StatefulWidget {
   UpdateMhs({
@@ -18,8 +20,8 @@ class UpdateMhs extends StatefulWidget {
   final List mhsData;
   final String nim;
   final String name;
-  final int sex;
-  final int enroll;
+  final String sex;
+  final String enroll;
   final VoidCallback onUpdate;
 
   final String apiAddress = Config.apiUrl;
@@ -39,46 +41,16 @@ class _UpdateMhsState extends State<UpdateMhs> {
     nimController.text = widget.nim;
     nameController.text = widget.name;
     sexController.text = widget.sex.toString();
-    enrollController.text = widget.enroll.toString();
+    enrollController.text = widget.enroll;
 
     return AlertDialog(
       title: Text("Perbarui Mahasiswa"),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'NIM',
-              enabled: false,
-              border: OutlineInputBorder(),
-            ),
-            controller: nimController,
-          ),
-          SizedBox(height: 20),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Name',
-              border: OutlineInputBorder(),
-            ),
-            controller: nameController,
-          ),
-          SizedBox(height: 20),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Sex',
-              border: OutlineInputBorder(),
-            ),
-            controller: sexController,
-          ),
-          SizedBox(height: 20),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Enroll',
-              border: OutlineInputBorder(),
-            ),
-            controller: enrollController,
-          ),
-        ],
+      content: InputWrap(
+        nimController: nimController,
+        nameController: nameController,
+        sexController: sexController,
+        enrollController: enrollController,
+        hideNIM: true,
       ),
       actions: [
         TextButton(

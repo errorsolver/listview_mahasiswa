@@ -76,8 +76,8 @@ class _TampilDataMhsState extends State<TampilDataMhs> {
             mhsData: mhsData,
             nim: nim,
             name: name,
-            sex: int.parse(sex),
-            enroll: int.parse(enroll),
+            sex: sex,
+            enroll: enroll,
             onUpdate: bacaData,
           ),
     );

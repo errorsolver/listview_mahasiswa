@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:listview_mahasiswa/config/config.dart';
 import 'package:listview_mahasiswa/helper/snackbar_error.dart';
 import 'package:listview_mahasiswa/helper/snackbar_success.dart';
+import 'package:listview_mahasiswa/widget/input_wrap.dart';
 
 class DeleteMhs extends StatefulWidget {
   DeleteMhs({
@@ -50,12 +51,19 @@ class _DeleteMhsState extends State<DeleteMhs> {
   @override
   Widget build(BuildContext context) {
     String sexConvert = widget.sex == 0 ? 'Laki-laki' : 'Perempuan';
+    String enrollConvert = (widget.enroll).toString();
 
     return AlertDialog(
       title: Text("Hapus Mahasiswa"),
-      content: Text(
-        'Konfirmasi penghapusan data\nNIM: ${widget.nim}\nNama: ${widget.name}\nSex: $sexConvert\nEnroll: ${widget.enroll}',
+      content: InputWrap.readOnly(
+        nimText: widget.nim,
+        nameText: widget.name,
+        sexText: sexConvert,
+        enrollText: enrollConvert,
       ),
+      //  Text(
+      //   'Konfirmasi penghapusan data\nNIM: ${widget.nim}\nNama: ${widget.name}\nSex: $sexConvert\nEnroll: $enrollConvert',
+      // ),
       actions: [
         TextButton(
           onPressed: () async {

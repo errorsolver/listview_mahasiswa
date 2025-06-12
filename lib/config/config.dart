@@ -3,7 +3,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 class Config {
   static String get apiUrl {
     if (dotenv.isInitialized) {
-      print('dotenv.isInitialized: ${dotenv.isInitialized}');
       print('API_BASE_URL: ${dotenv.env['API_BASE_URL']}');
     } else {
       print('dotenv belum diinisialisasi!');
@@ -13,12 +12,12 @@ class Config {
   }
 
   static Future<void> loadEnv() async {
+    print('Loading env');
     try {
-      print('meng-inisialisasi');
       await dotenv.load(fileName: ".env");
-      print('ter-inisialisasi');
+      print('env terinisialisasi');
     } catch (e) {
-      print('gagal inisialisasi');
+      print('env gagal diinisialisasi');
     }
   }
 }
