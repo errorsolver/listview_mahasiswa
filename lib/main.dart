@@ -18,6 +18,7 @@ class MainApp extends StatelessWidget {
       debugShowMaterialGrid: false,
       showSemanticsDebugger: false,
 
+      title: 'ListView Mahasiswa',
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.blue,
